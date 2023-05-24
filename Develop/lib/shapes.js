@@ -1,5 +1,6 @@
 // Create shape class and assign color
 class Shape {
+  // using this method to call out object
   constructor() {
     this.color = "";
   }
@@ -17,14 +18,14 @@ class Triangle extends Shape {
 
 class Circle extends Shape {
   render() {
-    return `<circle cx="150" cy="100" r="80" fill="${this.color}" />`;
+    return `<circle cx="150" cy="100" r="100" fill="${this.color}" />`;
   }
 }
 
 
 class Square extends Shape {
   render() {
-    return `<rect x="90" y="40" width="120" height="120" fill="${this.color}" />`;
+    return `<rect x="135" y="60" width="160" height="160" fill="${this.color}" />`;
   }
 }
 //export file

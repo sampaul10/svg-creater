@@ -7,52 +7,22 @@ class CLI {
   run() {
     return inquirer
       .prompt([
-        // {
-        //   name: "text",
-        //   type: "input",
-        //   message:
-        //     "Enter text for the logo. (Must not be more than 3 characters.)",
-        //   validate: (text) =>
-        //     text.length <= 3 ||
-        //     "The message must not contain more than 3 characters",
-        // },
-        // {
-        //   name: "textColor",
-        //   type: "input",
-        //   message: "Enter a text color",
-        // },
         {
-          name: "shapeType",
+          name: "Type",
           type: "list",
           message: "Select a shape for the logo",
           choices: ["circle", "square", "triangle"],
         },
         {
-          name: "shapeColor",
+          name: "Color",
           type: "input",
           message: "Enter a shape color",
         },
       ])
-    //   .then(({ text, textColor, shapeType, shapeColor }) => {
-    //     let shape;
-    //     switch (shapeType) {
-    //       case "circle":
-    //         shape = new Circle();
-    //         break;
-
-    //       case "square":
-    //         shape = new Square();
-    //         break;
-
-    //       default:
-    //         shape = new Triangle();
-    //         break;
-    //     }
-    //     shape.setColor(shapeColor);
-
-    .then(({ shapeType, shapeColor }) => {
+      // switch statement to set color 
+    .then(({ Type, Color }) => {
         let shape;
-        switch (shapeType) {
+        switch (Type) {
           case "circle":
             shape = new Circle();
             break;
@@ -65,9 +35,8 @@ class CLI {
             shape = new Triangle();
             break;
         }
-        shape.setColor(shapeColor);
-
-
+        // sets shape coloe
+        shape.setColor(Color);
 
     const svg = new Logo();
     svg.setShape(shape);
